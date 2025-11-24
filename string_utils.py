@@ -1,7 +1,7 @@
 
 
 
-def split_before_uppercases(formula):
+def split_by_capitals(formula):
     if not formula:
         return []
 
@@ -10,7 +10,7 @@ def split_before_uppercases(formula):
 
     for i in range(1, len (formula)):
         if formula[i].isupper():
-            parts.append(formula[start:1])
+            parts.append(formula[start:i])
             start = i
 
     parts.append(formula[start:])
@@ -22,7 +22,7 @@ def split_at_number(formula):
             prefix = formula[:i]
             number = int(formula[i:])
             return (prefix, number)
-        return (formula, 1)
+    return (formula, 1)
 
 def count_atoms_in_molecule(molecular_formula):
    
